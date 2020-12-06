@@ -51,6 +51,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
 
+    'Collab_App',
+
+    
+
+
 ]
 
 MIDDLEWARE = [
@@ -98,6 +103,9 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+LOGIN_REDIRECT_URL = reverse_lazy('Collab_App:home_view')
+
 
 # LOGIN_REDIRECT_URL = reverse_lazy('account:profile:Check_Auth_Info')
 

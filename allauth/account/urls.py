@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path,include
 
 from . import views
 
@@ -43,4 +43,8 @@ urlpatterns = [
         views.password_reset_from_key_done,
         name="account_reset_password_from_key_done",
     ),
+
+        path('profile/', include('allauth.account.profile.urls',namespace='profile'),name='profile'),
+
+
 ]

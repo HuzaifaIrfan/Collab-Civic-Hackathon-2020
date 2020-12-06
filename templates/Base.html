@@ -1,0 +1,73 @@
+<!-- 
+   Base Html Code 
+-->
+<html lang="en">
+
+<head>
+
+   {%	include	"Head.html"	%}
+
+
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+<!-- 
+   Import Header
+-->
+
+   {%	include	"Header.html"	%}
+
+
+
+
+
+
+
+  <h1>
+
+Under Development
+  </h1>
+
+
+
+
+
+
+               {% comment %} {%	include	"feed_tabs.html" with categories=categories categoryname=categoryname	%} {% endcomment %}
+
+
+
+
+               {% block content %}
+
+
+
+
+               {% endblock %}
+
+
+
+
+
+
+
+   <!-- 
+   Import footer
+-->
+
+
+ {%	include	"Footer.html"	%} 
+
+
+
+</body>
+
+</html>

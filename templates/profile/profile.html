@@ -1,0 +1,38 @@
+
+
+{% extends 'Base.html' %}
+
+
+
+{% block content %}
+
+
+
+
+
+
+<div class="container">
+<h1>
+    My Profile
+</h1>
+
+
+
+
+<a href="/accounts/profile/edit">Edit Profile</a>
+
+
+
+
+{% if user.is_authenticated %}
+
+       <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" height="50px" width='50px'/>
+{% endif %}
+
+
+
+</div>
+
+
+
+{% endblock  %}
