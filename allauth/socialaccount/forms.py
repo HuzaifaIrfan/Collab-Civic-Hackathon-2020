@@ -75,8 +75,28 @@ from django.contrib import admin
 
 from django.forms import ModelForm
 
-
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field
 class edit_profile_form(ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'edit_profile_form'
+        self.helper.form_class = 'form-group text-center border border-light p-5'
+        self.helper.form_method = 'post'
+        self.helper.form_action = ''
+        # self.helper.label_class = 'hidden'
+
+        self.helper.add_input(Submit('submit', 'Save'))
+
+        self.helper.layout = Layout(
+        Field('university',label = "", css_class='form-control'),
+        Field('department', css_class='form-control'),
+        Field('batch', css_class='form-control'),
+        Field('bio', rows="3" , css_class='form-control'),
+        Field('contact', rows="3" , css_class='form-control rounded-0'),
+    )
 
 
 
@@ -87,3 +107,11 @@ class edit_profile_form(ModelForm):
         #remove university for final as it will be verified and added through email
 
         fields = ['university','department', 'batch','bio','contact']
+
+    # helper.layout = Layout(
+    #     Field('title', css_class='form-control mt-2 mb-3'),
+    #     Field('text', rows="3", css_class='form-control mb-3'),
+    #     Field('author', css_class='form-control mb-3'),
+    #     Field('tags', css_class='form-control mb-3'),
+    #     Field('slug', css_class='form-control'),
+    # )

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
         'django.contrib.sites',
 
-
+'crispy_forms',
     
     'Universities',
 
@@ -96,7 +96,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Collab.wsgi.application'
 
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 AUTHENTICATION_BACKENDS = [
 
