@@ -65,3 +65,25 @@ class DisconnectForm(forms.Form):
         signals.social_account_removed.send(
             sender=SocialAccount, request=self.request, socialaccount=account
         )
+
+
+
+
+import django
+from django import forms
+from django.contrib import admin
+
+from django.forms import ModelForm
+
+
+class edit_profile_form(ModelForm):
+
+
+
+    class Meta:
+        model = SocialAccount
+        # filter_horizontal=('skills',)
+
+        #remove university for final as it will be verified and added through email
+
+        fields = ['university','department', 'batch','bio','contact']

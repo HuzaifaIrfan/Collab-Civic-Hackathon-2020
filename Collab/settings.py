@@ -44,6 +44,14 @@ INSTALLED_APPS = [
         'django.contrib.sites',
 
 
+    
+    'Universities',
+
+    'Projects',
+    'Students',
+
+
+
 
         'allauth',
     'allauth.account',

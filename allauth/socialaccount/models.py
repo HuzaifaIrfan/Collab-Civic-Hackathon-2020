@@ -19,7 +19,7 @@ from . import app_settings, providers
 from .adapter import get_adapter
 from .fields import JSONField
 
-
+from Universities.models import Universities,Departments,Batches
 class SocialAppManager(models.Manager):
     def get_current(self, provider, request=None):
         cache = {}
@@ -85,6 +85,32 @@ class SocialAccount(models.Model):
         max_length=30,
         choices=providers.registry.as_choices(),
     )
+
+
+    university=models.ForeignKey(Universities,null=True, blank=True, on_delete=models.SET_NULL)
+
+    department=models.ForeignKey(Departments,null=True, blank=True, on_delete=models.SET_NULL)
+
+    batch=models.ForeignKey(Batches,null=True, blank=True, on_delete=models.SET_NULL)
+
+    # available_for_hire=models.BooleanField(default=False)
+
+    bio=models.TextField(null=True,blank=True)
+
+    contact=models.TextField(null=True,blank=True)
+
+
+    # skills=models.ManyToManyField(Skills,verbose_name=_('Skills'),
+    #     blank=True,
+    #     help_text=_(
+    #         'Users Skills',
+    #     ),)
+
+
+
+
+
+
     # Just in case you're wondering if an OpenID identity URL is going
     # to fit in a 'uid':
     #
