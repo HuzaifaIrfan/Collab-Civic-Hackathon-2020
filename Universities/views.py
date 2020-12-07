@@ -8,7 +8,7 @@ from .models import Universities,Departments,Batches
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
+from other_settings import num_of_el_in_page
 
 def all_unis(request):
 
@@ -25,7 +25,7 @@ def all_unis(request):
 
 
 
-    new_paginator=Paginator(all_unis,3)
+    new_paginator=Paginator(all_unis,num_of_el_in_page)
 
     unis = new_paginator.page(page)
 

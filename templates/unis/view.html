@@ -7,6 +7,8 @@
 
 {% block content %}
 
+<div class="container">
+
 <div class="jumbotron">
 
 
@@ -18,20 +20,28 @@
 </h2>
 
 
-<a href="/unis/{{uni.id}}">View</a>
+<a href="/projects/byuni/{{uni.id}}" class="btn btn-primary">View Projects</a>
 
-<a href="/projects/byuni/{{uni.id}}">View Projects</a>
+<a href="/students/byuni/{{uni.id}}" class="btn btn-primary">View students</a>
 
-<a href="/students/byuni/{{uni.id}}">View students</a>
-
-
+<a href="http://{{uni.domain_name}}" class="btn btn-primary">Visit Website</a>
 
 
 
 
 </div>
 
+<div class="jumbotron">
 
+<h2>
+Description
+</h2>
+
+  <p class="card-text">{{uni.description}}</p>
+</div>
+
+
+</div>
 
 
 {% endblock %}

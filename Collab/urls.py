@@ -29,6 +29,8 @@ urlpatterns = [
 
     path('unis/', include('Universities.urls')),
 
+    path('search/', include('search.urls')),
+
 
 
 

@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.forms import ModelForm
 
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field,Reset
 
 from .models import Project
 
@@ -23,8 +23,10 @@ class add_project_form(ModelForm):
 
         self.helper.add_input(Submit('submit', 'Add Project'))
 
+
         self.helper.layout = Layout(
         Field('full_name',label = "", css_class='form-control'),
+        Field('assigned_project', css_class='form-control'),
         Field('image', css_class='form-control'),
         Field('report', css_class='form-control'),
         Field('description', rows="3" , css_class='form-control md-textarea'),
@@ -38,7 +40,7 @@ class add_project_form(ModelForm):
 
         #remove university for final as it will be verified and added through email
 
-        fields = ['full_name','description', 'image','report']
+        fields = ['full_name','assigned_project','description', 'image','report']
 
 
 
@@ -57,6 +59,7 @@ class edit_project_form(ModelForm):
 
         self.helper.layout = Layout(
         Field('full_name',label = "", css_class='form-control'),
+        Field('assigned_project', css_class='form-control'),
         Field('image', css_class='form-control'),
         Field('report', css_class='form-control'),
         Field('description', rows="3" , css_class='form-control md-textarea'),
@@ -70,4 +73,4 @@ class edit_project_form(ModelForm):
 
         #remove university for final as it will be verified and added through email
 
-        fields = ['full_name','description', 'image','report']
+        fields = ['full_name','assigned_project','description', 'image','report']

@@ -36,10 +36,24 @@ from Projects.forms import add_project_form, edit_project_form
 
 from Projects.models import Project
 
+from other_settings import num_of_el_in_page
+
+
 
 def profile(request):
 
-    return render(request,'profile/profile.html')
+    context={}
+
+    if request.user.is_authenticated:
+        user = request.user
+        social_account_user=user.socialaccount_set.all()[0]
+
+
+        context['student']=social_account_user
+
+
+
+        return render(request,'students/view.html',context)
 
 
     
@@ -64,14 +78,16 @@ def my_projects(request):
 
 
 
-        new_paginator=Paginator(all_my_projects,3)
+        new_paginator=Paginator(all_my_projects,num_of_el_in_page)
 
         projects = new_paginator.page(page)
 
         context['projects']=projects
 
+        context['page_title']='My Projects'
 
-        return render(request,'profile/my_projects.html',context)
+
+        return render(request,'projects/list_view.html',context)
 
 
         
@@ -153,6 +169,8 @@ def add_project(request):
                 form_data=request.POST
                 form_files=request.FILES
 
+                # print(form_data)
+
 
 
 
@@ -162,7 +180,7 @@ def add_project(request):
 
                 form.save()
 
-                context['message']={'success':True,'message':'Project Added'}
+                context['message']={'success':True,'message':f"Project Added {form_data['full_name']} "}
 
             except:
 
@@ -170,9 +188,9 @@ def add_project(request):
 
                 context['message']={'success':False,'message':'Error Occurred'}
 
-        else:
 
-            form=add_project_form()
+
+        form=add_project_form()
 
         context['form']=form
 
@@ -200,7 +218,7 @@ def delete_project(request,project_id):
             social_account_user=user.socialaccount_set.all()[0]
             project=Project.objects.get(id=project_id)
 
-            if project.user == user:
+            if project.social_user == social_account_user:
 
                 project.delete()
                 context['message']="Project Deleted!!"

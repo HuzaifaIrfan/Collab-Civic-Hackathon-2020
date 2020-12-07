@@ -27,8 +27,8 @@ def about_view(request):
 
 
 
-def contact_view(request):
+def team_view(request):
 
 
-    return render(request,'Contact.html')
+    return render(request,'Team.html')
 

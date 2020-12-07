@@ -10,7 +10,7 @@ from allauth.socialaccount.models import SocialAccount
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
+from other_settings import num_of_el_in_page
 
 def all_students(request):
 
@@ -27,7 +27,7 @@ def all_students(request):
 
 
 
-    new_paginator=Paginator(all_students,3)
+    new_paginator=Paginator(all_students,num_of_el_in_page)
 
     students = new_paginator.page(page)
 
@@ -56,7 +56,7 @@ def uni_students_view(request, uni_id):
 
 
 
-    new_paginator=Paginator(all_students,3)
+    new_paginator=Paginator(all_students,num_of_el_in_page)
 
     students = new_paginator.page(page)
 

@@ -10,7 +10,7 @@ from .models import Project
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
+from other_settings import num_of_el_in_page
 
 def all_projects(request):
 
@@ -27,12 +27,13 @@ def all_projects(request):
 
 
 
-    new_paginator=Paginator(all_projects,3)
+    new_paginator=Paginator(all_projects,num_of_el_in_page)
 
     projects = new_paginator.page(page)
 
     context['projects']=projects
 
+    context['page_title']='All Projects'
 
     return(render(request,'projects/list_view.html',context))
 
@@ -55,12 +56,13 @@ def student_projects_view(request,student_id):
 
 
 
-    new_paginator=Paginator(all_projects,3)
+    new_paginator=Paginator(all_projects,num_of_el_in_page)
 
     projects = new_paginator.page(page)
 
     context['projects']=projects
 
+    context['page_title']='Student Projects View'
 
     return(render(request,'projects/list_view.html',context))
 
@@ -82,9 +84,11 @@ def uni_projects_view(request,uni_id):
 
 
 
-    new_paginator=Paginator(all_projects,3)
+    new_paginator=Paginator(all_projects,num_of_el_in_page)
 
     projects = new_paginator.page(page)
+
+    context['page_title']='Uni Projects View'
 
     context['projects']=projects
 

@@ -2,6 +2,139 @@
 
 
 
+
+
+
+
+
+
+
+<!-- Card Wider -->
+<div class="card card-cascade wider col-lg-4 col-md-6 mb-4">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay">
+     <img src='/{{project.image}}'class="card-img-top"  />
+    <a href="/projects/{{project.id}}">
+      <div class="mask rgba-black-light"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade text-center pb-0">
+
+    <!-- Title -->
+    <h4 class="card-title"><strong>{{project.full_name}}</strong></h4>
+    <!-- Subtitle -->
+
+    
+    <h5 class="blue-text pb-2"><strong>{{project.assigned_project.full_name}}</strong></h5>
+    <!-- Text -->
+    {% comment %} <p class="card-text">{{project.description}}</p> {% endcomment %}
+
+
+  
+
+
+
+{% comment %} 
+
+    <a href="/projects/{{project.id}}" class="btn btn-default">View Project</a>
+
+{% if project.social_user == user.socialaccount_set.all.0  %}
+
+<a href="/accounts/profile/edit_project/{{project.id}}" class="btn btn-primary">
+
+Edit
+
+
+</a>
+
+
+<a href="/accounts/profile/delete_project/{{project.id}}" class="btn btn-danger">
+Delete
+</a>
+
+
+{% endif %}
+ {% endcomment %}
+
+    {% comment %} <!-- Linkedin -->
+    <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Twitter -->
+    <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
+    <!-- Dribbble -->
+    <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a> {% endcomment %}
+
+      </div>
+
+
+  <!-- Card footer -->
+  <div class="card-footer text-muted text-center">
+   
+{% include "students/icon.html" with student=project.social_user %}
+
+
+
+{% if project.university %}
+              {% include "unis/icon.html" with uni=project.university %}
+
+              {% endif %}
+  </div>
+
+
+
+
+
+
+
+
+</div>
+<!-- Card Wider -->
+
+
+
+
+
+
+{% comment %} 
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#">
+              <img src='/{{project.image}}'class="card-img-top" height="100px" width="100px" />
+        
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">{{project.full_name}}</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+              <div class="card-footer">
+
+
+
+
+
+{% include "students/icon.html" with student=project.social_user %}
+
+
+
+{% if project.university %}
+              {% include "unis/icon.html" with uni=project.university %}
+
+              {% endif %}
+
+
+
+
+
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div> {% endcomment %}
+
+{% comment %} 
 <div class="jumbotron">
 
 
@@ -11,29 +144,9 @@
 {{project.full_name}}
 
 </h2>
-
-<img src='/{{project.university.image}}' height="100px" width="100px" />
-
-<h2>
-{{project.university.full_name}}
-
-</h2>
-
-
-<img src='{{ project.social_user.get_avatar_url }}' height="100px" width="100px" />
-
-<a href="/unis/{{project.university.id}}">View University</a>
-
-
-<h2>
-
-{{project.social_user.extra_data.name}}
-</h2>
-
-
-<a href="/students/{{project.social_user.id}}">View Student</a>
-
 <a href="/projects/{{project.id}}">View Project</a>
+
+
 
 
 
@@ -49,7 +162,13 @@
 {% endif %}
 
 
+{% include "students/icon.html" with student=project.social_user %}
 
 
 
-</div>
+{% include "unis/icon.html" with uni=project.university %}
+
+
+
+
+</div> {% endcomment %}

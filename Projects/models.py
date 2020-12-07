@@ -14,6 +14,33 @@ from  allauth.socialaccount.models import SocialAccount
 
 from extras.extras import ContentTypeRestrictedFileField
 
+
+class Assigned_Project(models.Model):
+    full_name = models.CharField(max_length=100,)
+
+
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
+
+    description=models.TextField()
+
+    project_template=models.FileField(upload_to ='static/project/templates',null=True,blank=True)
+
+    
+    created = models.DateTimeField('created', auto_now_add=True)
+    modified = models.DateTimeField('modified', auto_now=True)
+
+
+
+
+    def __str__(self):
+        return self.full_name
+
+
+
+
+
 class Project(models.Model):
     full_name = models.CharField(max_length=100,)
 
@@ -27,6 +54,9 @@ class Project(models.Model):
 
 
     report= models.FileField(upload_to ='static/project/report', null=True,blank=True)
+
+
+    assigned_project = models.ForeignKey(Assigned_Project, on_delete=models.SET_NULL ,null=True, blank=True)
 
     # file = ContentTypeRestrictedFileField(
     #     upload_to='static/project/reports',
@@ -49,30 +79,4 @@ class Project(models.Model):
 
     def __str__(self):
         return self.full_name
-
-
-
-# class Assigned_Project(models.Model):
-#     full_name = models.CharField(max_length=100,)
-
-
-#     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-#     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
-
-#     description=models.TextField()
-#     project_template=models.FileField(upload_to ='static/project/',null=True,blank=True)
-
-    # git_link = models.CharField(max_length=200,)
-
-    
-    # developed=models.BooleanField(default=True)
-
-    # work_needed=models.BooleanField(default=False)
-
-
-
-
-    # def __str__(self):
-    #     return self.full_name
 

@@ -6,6 +6,7 @@
 {% block content %}
 
 
+<div class="container">
 <h1>
 
 {{page_title}}
@@ -16,7 +17,7 @@
 {% include "pagination.html" with page=students %}
 
 
-
+<div class="row">
 
 {% for student in students %}
 
@@ -34,11 +35,15 @@
 
 {% endfor %}
 
+</div>
+
+
+{% include "pagination.html" with page=students %}
 
 
 
 
-
+</div>
 
 
 

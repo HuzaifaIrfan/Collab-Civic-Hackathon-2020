@@ -7,6 +7,8 @@
 
 {% block content %}
 
+<div class="container">
+
 <div class="jumbotron">
 
 
@@ -18,31 +20,33 @@
 
 </h2>
 
+<a href="/projects/bystudent/{{student.id}}" class="btn btn-primary">View Projects</a>
 
 
-
-<img src='/{{ student.university.image }}' height="100px" width="100px" />
-
-<h2>
-
-{{student.university.full_name}}
-
-</h2>
+{% if user.socialaccount_set.all.0 == student %}
 
 
+<a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
 
-
-<a href="/unis/{{student.university.id}}">View Uni</a>
-
-
-
-<a href="/students/{{student.id}}">View Student</a>
-
-<a href="/projects/bystudent/{{student.id}}">View Projects</a>
+<a href="/accounts/profile/my_projects" class="btn btn-primary">My Projects</a>
 
 
 
 
+
+{% endif %}
+
+{% if student.university %}
+
+
+{% include "unis/icon.html" with uni=student.university %}
+
+
+{% endif %}
+
+
+
+</div>
 
 </div>
 
