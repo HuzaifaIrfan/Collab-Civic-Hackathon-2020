@@ -51,9 +51,10 @@ def my_projects(request):
 
     if request.user.is_authenticated:
         user = request.user
+        social_account_user=user.socialaccount_set.all()[0]
 
 
-        all_my_projects=Project.objects.filter(user=user).order_by("-id")
+        all_my_projects=Project.objects.filter(social_user=social_account_user).order_by("-id")
 
 
         try:
@@ -146,7 +147,7 @@ def add_project(request):
 
         if request.method =="POST":
 
-            project = Project.objects.create(user=user)
+            project = Project.objects.create(social_user=social_account_user,university=social_account_user.university)
 
             try:
                 form_data=request.POST

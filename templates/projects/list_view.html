@@ -1,0 +1,48 @@
+
+{% extends 'Base.html' %}
+
+
+
+{% block content %}
+
+
+<h1>
+
+{{page_title}}
+
+</h1>
+
+
+{% include "pagination.html" with page=projects %}
+
+
+
+
+{% for project in projects %}
+
+
+
+{% include "projects/card.html" with project=project %}
+
+
+
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

@@ -32,7 +32,7 @@ def all_unis(request):
     context['unis']=unis
 
 
-    return(render(request,'unis/all.html',context))
+    return(render(request,'unis/list_view.html',context))
 
 
 

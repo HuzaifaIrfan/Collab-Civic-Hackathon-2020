@@ -1,0 +1,40 @@
+
+
+
+
+<div class="jumbotron">
+
+
+<img src='/{{project.image}}' height="100px" width="100px" />
+
+<h2>
+{{project.full_name}}
+
+</h2>
+
+
+<a href="/projects/{{project.id}}">View</a>
+
+
+<img src='{{ project.social_user.get_avatar_url }}' height="100px" width="100px" />
+
+{{project.social_user.extra_data.name}}
+
+<a href="/students/{{project.social_user.id}}">View Student</a>
+
+<a href="/projects/bystudent/{{project.social_user.id}}">View Other Projects</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

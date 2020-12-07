@@ -18,7 +18,7 @@ class Project(models.Model):
     full_name = models.CharField(max_length=100,)
 
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    social_user = models.ForeignKey(SocialAccount, on_delete=models.CASCADE)
 
     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
 
@@ -52,16 +52,16 @@ class Project(models.Model):
 
 
 
-class Assigned_Project(models.Model):
-    full_name = models.CharField(max_length=100,)
+# class Assigned_Project(models.Model):
+#     full_name = models.CharField(max_length=100,)
 
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
+#     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
 
-    description=models.TextField()
-    project_template=models.FileField(upload_to ='static/project/',null=True,blank=True)
+#     description=models.TextField()
+#     project_template=models.FileField(upload_to ='static/project/',null=True,blank=True)
 
     # git_link = models.CharField(max_length=200,)
 
@@ -73,6 +73,6 @@ class Assigned_Project(models.Model):
 
 
 
-    def __str__(self):
-        return self.full_name
+    # def __str__(self):
+    #     return self.full_name
 

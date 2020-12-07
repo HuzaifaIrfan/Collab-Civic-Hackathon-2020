@@ -8,5 +8,5 @@ from .models import Project
 class Project_Admin(admin.ModelAdmin):
     list_display = (
         "full_name",
-        "user",
+        "social_user",
     )

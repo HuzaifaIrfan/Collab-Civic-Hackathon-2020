@@ -123,6 +123,7 @@ SITE_ID = 1
 
 
 
+from google_outh import client_id, secret
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -131,8 +132,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # credentials, or list them here:
         'APP': {
             #this is written here for testing Purposes
-            'client_id': '983093955236-n34au3vfvpcr747c6h5l2l0b9cjj1t6c.apps.googleusercontent.com',
-            'secret': 'Hq6u1cM_3rCELMTc4CTxeKdr',
+            'client_id': client_id,
+            'secret': secret,
             'key': ''
         }
     }
