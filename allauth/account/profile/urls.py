@@ -22,6 +22,34 @@ urlpatterns = [
     ),
 
 
+            path(
+        "add_project",
+        views.add_project,
+        name="add_project",
+    ),
+
+
+    path(
+        "my_projects",
+        views.my_projects,
+        name="my_projects",
+    ),
+
+    path(
+
+        "edit_project/<int:project_id>",
+        views.edit_project,
+        name="edit_project",
+    ),
+
+    path(
+
+        "delete_project/<int:project_id>",
+        views.delete_project,
+        name="delete_project",
+    ),
+
+
     # path(
     #     "Get_Extra_Data",
     #     views.Get_Extra_Data,

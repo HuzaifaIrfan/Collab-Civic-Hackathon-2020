@@ -1,0 +1,45 @@
+
+
+
+
+{% extends 'Base.html' %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+
+<div class="container">
+
+
+        <div class="jumbotron">
+
+        danger
+
+
+                        {% if message %}
+
+                                        <h2 align='center'>
+
+                                        {{message}}
+
+                                        </h2>
+
+                        {% endif %}
+
+
+        </div>
+
+
+</div>
+
+
+
+
+{% endblock  %}

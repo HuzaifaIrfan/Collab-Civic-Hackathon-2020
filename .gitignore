@@ -131,4 +131,9 @@ dmypy.json
 static/img/unis/*
 !static/img/unis/.gitkeep 
 
+static/project/img/*
+!static/project/img/.gitkeep 
+
+static/project/report/*
+!static/project/report/.gitkeep 
 

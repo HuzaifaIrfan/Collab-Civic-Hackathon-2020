@@ -83,7 +83,7 @@ class edit_profile_form(ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_id = 'edit_profile_form'
-        self.helper.form_class = 'form-group text-center border border-light p-5'
+        self.helper.form_class = 'form-group text-center'
         self.helper.form_method = 'post'
         self.helper.form_action = ''
         # self.helper.label_class = 'hidden'
@@ -94,8 +94,8 @@ class edit_profile_form(ModelForm):
         Field('university',label = "", css_class='form-control'),
         Field('department', css_class='form-control'),
         Field('batch', css_class='form-control'),
-        Field('bio', rows="3" , css_class='form-control'),
-        Field('contact', rows="3" , css_class='form-control rounded-0'),
+        Field('bio', rows="3" , css_class='form-control md-textarea'),
+        Field('contact', rows="3" , css_class='form-control md-textarea'),
     )
 
 

@@ -1,0 +1,65 @@
+
+
+
+
+{% extends 'Base.html' %}
+
+
+
+
+
+
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% comment %} <link rel="stylesheet" type="text/css" href="/static/css/multi-select.css"> {% endcomment %}
+
+
+<div class="container">
+
+
+
+
+
+<h2 align='center'>
+
+Edit Project
+
+</h2>
+
+{% if message %}
+
+    {% if message.success %}
+
+
+        <div class="alert alert-success" role="alert">
+          {{message.message}}
+        </div>
+
+    {% else %}
+
+        <div class="alert alert-danger" role="alert">
+          {{message.message}}
+        </div>
+
+    {% endif %}
+
+
+{% endif %}
+
+
+{% crispy form %}
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock  %}
