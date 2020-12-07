@@ -13,11 +13,21 @@
 </h2>
 
 
+<img src='/{{ student.university.image }}' height="100px" width="100px" />
+
+<h2>
+
+{{student.university.full_name}}
+
+</h2>
+<a href="/unis/{{student.university.id}}">View Uni</a>
+
+
+
 <a href="/students/{{student.id}}">View Student</a>
 
-<a href="/project/byorg/{{uni.name}}">View Projects</a>
+<a href="/projects/bystudent/{{student.id}}">View Projects</a>
 
-<a href="/profile/byorg/{{uni.name}}">View Profiles</a>
 
 
 

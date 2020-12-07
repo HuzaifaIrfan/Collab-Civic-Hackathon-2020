@@ -12,26 +12,41 @@
 
 </h2>
 
+<img src='/{{project.university.image}}' height="100px" width="100px" />
 
-<a href="/projects/{{project.id}}">View</a>
+<h2>
+{{project.university.full_name}}
+
+</h2>
 
 
 <img src='{{ project.social_user.get_avatar_url }}' height="100px" width="100px" />
 
+<a href="/unis/{{project.university.id}}">View University</a>
+
+
+<h2>
+
 {{project.social_user.extra_data.name}}
+</h2>
+
 
 <a href="/students/{{project.social_user.id}}">View Student</a>
 
-<a href="/projects/bystudent/{{project.social_user.id}}">View Other Projects</a>
+<a href="/projects/{{project.id}}">View Project</a>
 
 
 
 
+{% if project.social_user == user.socialaccount_set.all.0  %}
+
+<a href="/accounts/profile/edit_project/{{project.id}}">Edit Project</a>
 
 
+<a href="/accounts/profile/delete_project/{{project.id}}">DeleteProject</a>
 
 
-
+{% endif %}
 
 
 

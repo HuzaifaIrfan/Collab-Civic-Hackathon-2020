@@ -10,8 +10,24 @@
 <div class="jumbotron">
 
 
+<img src='/{{project.image}}' height="100px" width="100px" />
+
+<h2>
+{{project.full_name}}
+
+</h2>
+
+<img src='/{{project.university.image}}' height="100px" width="100px" />
+
+<h2>
+{{project.university.full_name}}
+
+</h2>
+
 
 <img src='{{ project.social_user.get_avatar_url }}' height="100px" width="100px" />
+
+<a href="/unis/{{project.university.id}}">View University</a>
 
 
 <h2>
@@ -20,12 +36,23 @@
 </h2>
 
 
-<a href="/students/{{student.id}}">View Student</a>
+<a href="/students/{{project.social_user.id}}">View Student</a>
 
-<a href="/project/byorg/{{uni.name}}">View Projects</a>
+<a href="/projects/{{project.id}}">View Project</a>
 
 
-<a href="/profile/byorg/{{uni.name}}">View Profiles</a>
+
+
+
+{% if project.social_user == user.socialaccount_set.all.0  %}
+
+<a href="/accounts/profile/edit_project/{{project.id}}">Edit Project</a>
+
+
+<a href="/accounts/profile/delete_project/{{project.id}}">DeleteProject</a>
+
+
+{% endif %}
 
 
 
