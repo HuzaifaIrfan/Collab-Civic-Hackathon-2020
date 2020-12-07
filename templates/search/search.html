@@ -1,0 +1,51 @@
+{% extends 'Base.html' %}
+
+
+
+{% block content %}
+
+<h1>Search Page</h1>
+
+<br/>
+{% comment %} <form action="{% url 'search:search_projects' %}" method="GET" value="{{request.GET.q}}">
+Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
+<input type="submit" name="submit" value="Search"/>
+</form> {% endcomment %}
+
+
+{% comment %} {% if submitbutton == 'Search' and request.GET.q != '' %}
+
+{% endif %} {% endcomment %}
+{% if projects %}
+<h1>Results for <b>{{ request.GET.q }}</b></h1>
+<br/><br/>
+
+<div class='container'>
+
+<div class='row'>
+
+{% for project in projects %}
+
+{% include "projects/card.html" with project=project %}
+
+
+
+{% endfor %}
+
+
+</div>
+</div>
+
+
+{% else %}
+
+
+No search results for this query
+
+
+{% endif %}
+
+
+{% endblock %}
+
+

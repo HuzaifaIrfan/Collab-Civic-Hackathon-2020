@@ -138,6 +138,8 @@ def profile_edit(request):
 
         context['form']=form
 
+  
+
 
     return render(request,'profile/edit.html',context)
 
@@ -287,6 +289,7 @@ def edit_project(request,project_id):
             form=edit_project_form(instance=project)
 
         context['form']=form
+        context['project']=project
 
 
 

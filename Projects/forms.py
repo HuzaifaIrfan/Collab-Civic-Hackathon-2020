@@ -28,6 +28,8 @@ class add_project_form(ModelForm):
         Field('full_name',label = "", css_class='form-control'),
         Field('assigned_project', css_class='form-control'),
         Field('image', css_class='form-control'),
+                Field('git_link', css_class='form-control'),
+        Field('youtube_link', css_class='form-control'),
         Field('report', css_class='form-control'),
         Field('description', rows="3" , css_class='form-control md-textarea'),
     )
@@ -40,7 +42,7 @@ class add_project_form(ModelForm):
 
         #remove university for final as it will be verified and added through email
 
-        fields = ['full_name','assigned_project','description', 'image','report']
+        fields = ['full_name','assigned_project','description', 'image','report','git_link','youtube_link']
 
 
 
@@ -61,6 +63,8 @@ class edit_project_form(ModelForm):
         Field('full_name',label = "", css_class='form-control'),
         Field('assigned_project', css_class='form-control'),
         Field('image', css_class='form-control'),
+        Field('git_link', css_class='form-control'),
+        Field('youtube_link', css_class='form-control'),
         Field('report', css_class='form-control'),
         Field('description', rows="3" , css_class='form-control md-textarea'),
     )
@@ -73,4 +77,4 @@ class edit_project_form(ModelForm):
 
         #remove university for final as it will be verified and added through email
 
-        fields = ['full_name','assigned_project','description', 'image','report']
+        fields = ['full_name','assigned_project','description', 'image','report','git_link','youtube_link']

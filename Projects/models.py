@@ -49,7 +49,12 @@ class Project(models.Model):
 
     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
 
-    description=models.TextField()
+    git_link= models.URLField(null=True,blank=True)
+
+    youtube_link= models.URLField(null=True,blank=True)
+
+
+    description=models.TextField(null=True,blank=True)
     image=models.ImageField(upload_to ='static/project/img',default='static/img/default_project.jpg')
 
 
