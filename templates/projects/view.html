@@ -3,7 +3,7 @@
 <div class="container">
   <div class="jumbotron">
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <img src="/{{project.image}}" height="100px" width="100px" />
+      <img src="/{{project.image}}" height="300px" width="300px" />
 
       <h2>{{project.full_name}}</h2>
 
@@ -60,7 +60,12 @@
   <div class="jumbotron">
     <h2>Description</h2>
 
-    <p class="card-text">{{project.description}}</p>
+    <p>
+    
+    {{project.description}}
+    
+    
+    </p>
   </div>
 
   {% endif %}

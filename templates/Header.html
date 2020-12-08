@@ -150,9 +150,9 @@ Under Construction
 
 
 
-    <nav style="padding-bottom:15px;margin-bottom: 0px; background-color: #31b0d5" class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4">
-      <a><img style="height: 45px;width: 45px;" src="/static/imgs/trans.png"></a>
-      <h1 class="" style="color: #f7f7f7; margin-right: 50px;margin-left: 30px;">COLLAB</h1>
+    <nav style="padding-bottom:15px;margin-bottom: 0px; background-color: #31b0d5" class="navbar navbar-toggleable-md navbar-inverse bg-inverse mb-4 d-flex flex-row justify-content-center  align-items-center">
+      <a href='/'><img style="height: 45px;width: 100px; margin-left: 30px; margin-right: 30px" src="/static/imgs/logo4.png"></a>
+    
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -170,43 +170,67 @@ Under Construction
         <ul class="navbar-nav mr-auto">
 
 
-
-
-
-          <li class="nav-item ">
-            <a class="nav-link" href="/">Home</a>
-          </li>
+   
 
 
          
 
 
 
-                 <li class="nav-item ">
+                 <li class="nav-item active">
 
-    <a class="nav-link" href="/unis">Universities Portal</a>
+    <a style="font-size: 1.2em;" class="nav-link" href="/unis">
+    
+    
+              <b>
+            Universities Portal
+            </b>
+            
+</a>
 </li>
 
 
 
-                 <li class="nav-item ">
+                 <li class="nav-item active">
 
-    <a class="nav-link" href="/projects">Projects</a>
+    <a style="font-size: 1.2em;" class="nav-link" href="/projects">
+    
+              <b>
+             Projects
+            </b>
+            
+    
+</a>
 </li>
 
 
 
 
 
-          <li class="nav-item">
-            <a  class="nav-link" href="/about">About</a>
+          <li class="nav-item active">
+            <a style="font-size: 1.2em;" class="nav-link" href="/about">
+            
+                      <b>
+              About
+            </b>
+            
+            
+         </a>
           </li>
 
-          <li class="nav-item">
-            <a  class="nav-link" href="/team">Our Team</a>
+          <li class="nav-item active">
+            <a style="font-size: 1.2em;" class="nav-link" href="/team">
+            
+                      <b>
+            Our Team
+            </b>
+            
+            
+           </a>
           </li>
 
    
+
 
 
 
@@ -217,23 +241,11 @@ Under Construction
         </ul>
 
 
-        <div>
-
-                               <form class="form-inline mt-2 mt-md-0" action="/search" method="get" >
 
 
 
- 
-          <input name='q' class="form-control mr-sm-2 input-sm" type="text" placeholder="Search">
 
-
-
-        </form>
-
-</div>
-  
-
-
+     <div class='d-flex flex-row justify-content-center  align-items-center'>
 
 {% if user.is_authenticated %}
 
@@ -251,18 +263,19 @@ Under Construction
 <form action='/accounts/profile/add_project'>
 
 
-     <button class="btn btn-primary btn-sm">Add Projects</button>
+     <button class="btn btn-primary btn-sm">Add Project</button>
 
     
   
  </form> 
 
-<form action='/accounts/profile'>
-
- <button class="btn btn-primary btn-sm">{{ user.socialaccount_set.all.0.extra_data.name }}</button>
+       
 
 
- </form> 
+
+   {% include "students/icon.html" with student=user.socialaccount_set.all.0 %}
+
+
 
 
        
@@ -288,14 +301,18 @@ Under Construction
 {% endif %}
 
 
+</div>
 
-
-        {% comment %} <form class="form-inline mt-2 mt-md-0">
+         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button style="color: #f7f7f7" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> {% endcomment %}
+          
+        </form> 
 
 
         
       </div>
+
+
+
+
     </nav>

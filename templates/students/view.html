@@ -9,20 +9,27 @@
     </div>
 
     <div class="d-flex flex-row justify-content-center">
-      <a href="/projects/bystudent/{{student.id}}" class="btn btn-primary"
-        >View Projects</a
-      >
+ 
 
       {% if user.socialaccount_set.all.0 == student %}
 
-      <a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
+
 
       <a href="/accounts/profile/my_projects" class="btn btn-primary"
         >My Projects</a
       >
 
+      <a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
+
+
       <a href="/accounts/profile/add_projects" class="btn btn-primary"
         >Add Project</a
+      >
+
+      {% else %}
+
+           <a href="/projects/bystudent/{{student.id}}" class="btn btn-primary"
+        >View Projects</a
       >
 
       {% endif %}

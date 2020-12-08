@@ -18,11 +18,9 @@
   }
 
 
-  .image-card{
+  .card-image{
 
-    width:200px;
-
-    height:200px;
+  
   }
 
 
@@ -55,7 +53,7 @@
   background-color: #fff;
   background-image: url("/static/imgs/tech.jpg");
 
-  height: 600px;
+  height: 400px;
 }
 
 
