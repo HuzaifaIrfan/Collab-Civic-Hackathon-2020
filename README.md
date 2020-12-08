@@ -1,1 +1,1 @@
-# Collab-CIvic-Hackathon-2020
+# Collab-Civic-Hackathon-2020
