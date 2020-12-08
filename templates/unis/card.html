@@ -1,35 +1,25 @@
-
-
-
-
 <div class="jumbotron">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <img src="/{{uni.image}}" height="100px" width="100px" />
 
+    <h2>{{uni.full_name}}</h2>
 
-<img src='/{{uni.image}}' height="100px" width="100px" />
+    <div class="d-flex flex-row justify-content-center">
+      <a href="/unis/{{uni.id}}" class="btn btn-primary">View</a>
 
-<h2>
-{{uni.full_name}}
+      <a href="/projects/byuni/{{uni.id}}" class="btn btn-primary"
+        >View Projects</a
+      >
 
-</h2>
+      {% comment %}
+      <a href="/students/byuni/{{uni.id}}" class="btn btn-primary"
+        >View students</a
+      >
+      {% endcomment %}
 
-
-<a href="/unis/{{uni.id}}" class="btn btn-primary">View</a>
-
-<a href="/projects/byuni/{{uni.id}}" class="btn btn-primary">View Projects</a>
-
-{% comment %} <a href="/students/byuni/{{uni.id}}" class="btn btn-primary">View students</a> {% endcomment %}
-
-
-<a href="http://{{uni.domain_name}}" class="btn btn-primary">Visit Website</a>
-
-
-
-
-
-
-
-
-
-
-
+      <a href="http://{{uni.domain_name}}" class="btn btn-primary"
+        >Visit Website</a
+      >
+    </div>
+  </div>
 </div>

@@ -94,6 +94,7 @@ class edit_profile_form(ModelForm):
         Field('university',label = "", css_class='form-control'),
         Field('department', css_class='form-control'),
         Field('batch', css_class='form-control'),
+        Field('registration_number', css_class='form-control'),
         Field('bio', rows="3" , css_class='form-control md-textarea'),
         Field('contact', rows="3" , css_class='form-control md-textarea'),
     )
@@ -106,7 +107,7 @@ class edit_profile_form(ModelForm):
 
         #remove university for final as it will be verified and added through email
 
-        fields = ['university','department', 'batch','bio','contact']
+        fields = ['university','department', 'batch','bio','contact','registration_number']
 
     # helper.layout = Layout(
     #     Field('title', css_class='form-control mt-2 mb-3'),

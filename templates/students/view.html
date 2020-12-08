@@ -1,57 +1,55 @@
-
-
-
-{% extends 'Base.html' %}
-
-
-
-{% block content %}
+{% extends 'Base.html' %} {% block content %}
 
 <div class="container">
+  <div class="jumbotron">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <img src="{{ student.get_avatar_url }}" height="100px" width="100px" />
 
-<div class="jumbotron">
+      <h2>{{student.extra_data.name}}</h2>
+    </div>
 
+    <div class="d-flex flex-row justify-content-center">
+      <a href="/projects/bystudent/{{student.id}}" class="btn btn-primary"
+        >View Projects</a
+      >
 
-<img src='{{ student.get_avatar_url }}' height="100px" width="100px" />
+      {% if user.socialaccount_set.all.0 == student %}
 
-<h2>
+      <a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
 
-{{student.extra_data.name}}
+      <a href="/accounts/profile/my_projects" class="btn btn-primary"
+        >My Projects</a
+      >
 
-</h2>
+      <a href="/accounts/profile/add_projects" class="btn btn-primary"
+        >Add Project</a
+      >
 
-<a href="/projects/bystudent/{{student.id}}" class="btn btn-primary">View Projects</a>
+      {% endif %}
+    </div>
 
+    <div class="d-flex flex-row justify-content-center align-items-center">
+      {% include "unis/icon.html" with uni=student.university %}
 
-{% if user.socialaccount_set.all.0 == student %}
+      <h2>{{student.university.name}}</h2>
+    </div>
 
+    {% if student.contact %}
+    <div class="jumbotron">
+      <h2>Contact Information</h2>
 
-<a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
+      <p>{{student.contact}}</p>
+    </div>
 
-<a href="/accounts/profile/my_projects" class="btn btn-primary">My Projects</a>
+    {% endif %} {% if student.bio %}
+    <div class="jumbotron">
+      <h2>BIO</h2>
 
+      <p>{{student.bio}}</p>
+    </div>
 
-
-
-
-{% endif %}
-
-{% if student.university %}
-
-
-{% include "unis/icon.html" with uni=student.university %}
-
-
-{% endif %}
-
-
-
+    {% endif %}
+  </div>
 </div>
-
-</div>
-
-
-
 
 {% endblock %}
-

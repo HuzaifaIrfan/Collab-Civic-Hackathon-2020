@@ -2,10 +2,15 @@
 
 
 
-  <div class="view view-cascade overlay">
+      {% if student %}
+
+            
 
 
-<img src='{{student.get_avatar_url}}' class="rounded-circle" height="50px" width="50px" />
+  <div class="view view-cascade overlay image-icon">
+
+
+<img src='{{student.get_avatar_url}}' class="rounded-circle" height="100%" width="100%" />
 
     <a href="/students/{{student.id}}">
       <div class="mask rounded-circle rgba-black-strong flex-center">
@@ -18,7 +23,7 @@
   </div>
 
 
-
+   {% endif %}
 
 
 

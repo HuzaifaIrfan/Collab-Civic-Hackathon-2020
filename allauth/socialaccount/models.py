@@ -95,6 +95,9 @@ class SocialAccount(models.Model):
 
     # available_for_hire=models.BooleanField(default=False)
 
+
+    registration_number=models.CharField( max_length=50 ,null=True,blank=True)
+
     bio=models.TextField(null=True,blank=True)
 
     contact=models.TextField(null=True,blank=True)

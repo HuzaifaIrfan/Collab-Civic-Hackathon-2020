@@ -1,48 +1,35 @@
-
-
-
-{% extends 'Base.html' %}
-
-
-
-{% block content %}
+{% extends 'Base.html' %} {% block content %}
 
 <div class="container">
+  <div class="jumbotron">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <img src="/{{uni.image}}" height="100px" width="100px" />
 
-<div class="jumbotron">
+      <h2>{{uni.full_name}}</h2>
 
+      <div class="d-flex flex-row justify-content-center">
+        <a href="/projects/byuni/{{uni.id}}" class="btn btn-primary"
+          >View Projects</a
+        >
 
-<img src='/{{uni.image}}' height="100px" width="100px" />
+        {% comment %}
+        <a href="/students/byuni/{{uni.id}}" class="btn btn-primary"
+          >View students</a
+        >
+        {% endcomment %}
 
-<h2>
-{{uni.full_name}}
+        <a href="http://{{uni.domain_name}}" class="btn btn-primary"
+          >Visit Website</a
+        >
+      </div>
+    </div>
+  </div>
 
-</h2>
+  <div class="jumbotron">
+    <h2>Description</h2>
 
-
-<a href="/projects/byuni/{{uni.id}}" class="btn btn-primary">View Projects</a>
-
-{% comment %} <a href="/students/byuni/{{uni.id}}" class="btn btn-primary">View students</a> {% endcomment %}
-
-<a href="http://{{uni.domain_name}}" class="btn btn-primary">Visit Website</a>
-
-
-
-
+    <p class="card-text">{{uni.description}}</p>
+  </div>
 </div>
-
-<div class="jumbotron">
-
-<h2>
-Description
-</h2>
-
-  <p class="card-text">{{uni.description}}</p>
-</div>
-
-
-</div>
-
 
 {% endblock %}
-

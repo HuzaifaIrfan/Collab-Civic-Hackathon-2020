@@ -1,11 +1,19 @@
 
 
 
-  <div class="view view-cascade overlay">
+
+      {% if uni %}
+
+            
+
+ 
+
+
+  <div class="view view-cascade overlay image-icon">
 
 
 
-<img src='/{{uni.image}}' class="rounded-circle" height="50px" width="50px" />
+<img src='/{{uni.image}}' class="rounded-circle" height="100%" width="100%" />
 
 
 <a href="/unis/{{uni.id}}">
@@ -19,6 +27,7 @@
   </div>
 
 
+   {% endif %}
 
 
 

@@ -1,155 +1,106 @@
-
-
-
-{% extends 'Base.html' %}
-
-
-
-{% block content %}
+{% extends 'Base.html' %} {% block content %}
 
 <div class="container">
+  <div class="jumbotron">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <img src="/{{project.image}}" height="100px" width="100px" />
 
-<div class="jumbotron">
+      <h2>{{project.full_name}}</h2>
 
+      {% if project.assigned_project %}
 
-<img src='/{{project.image}}' height="100px" width="100px" />
+        <h3>{{project.assigned_project}}</h3>
 
-<h2>
-{{project.full_name}}
+      {% endif %}
 
-</h2>
+      
+      <div class="d-flex flex-row justify-content-center">
 
-{% if project.assigned_project %}
 
 
-<h3>
+        {% if project.git_link %}
 
-{{project.assigned_project}}
+        <a href="{{project.git_link}}" class="btn btn-primary">
+          Project Files
+        </a>
 
+        {% endif %} 
+        
+        
+        {% if project.social_user == user.socialaccount_set.all.0 %}
 
-</h3>
+        <a
+          href="/accounts/profile/edit_project/{{project.id}}"
+          class="btn btn-primary"
+        >
+          Edit
+        </a>
 
-{% endif %}
+        <a
+          href="/accounts/profile/delete_project/{{project.id}}"
+          class="btn btn-danger"
+        >
+          Delete
+        </a>
 
+        {% endif %}
+      </div>
+    </div>
 
+    <div class="d-flex flex-row justify-content-center">
+      {% include "unis/icon.html" with uni=project.university %}
+      
+       {% include "students/icon.html" with student=project.social_user %}
+    </div>
 
-    {% comment %} <a href="/projects/{{project.id}}" class="btn btn-default">View Project</a> {% endcomment %}
 
+  </div>
 
-    {% if project.git_link %}
+  {% if project.description %}
+  <div class="jumbotron">
+    <h2>Description</h2>
 
-    <a href="{{project.git_link}}" class="btn btn-primary">
+    <p class="card-text">{{project.description}}</p>
+  </div>
 
-    View on Github
+  {% endif %}
+     {% if project.report %}
 
-    </a>
+       <div class="jumbotron">
+    <h2>Report</h2>
+  
+  <iframe src="/{{project.report}}" height="500px" width="100%"></iframe>
 
 
-{% endif %}
+  </div>
+  
+    {% endif %}
+  
+  
+  
+   {% if project.youtube_link %}
+  <div class="jumbotron">
+    <h2>Video</h2>
 
+    <div id="video_block"></div>
 
+    <script>
+      var youtube_link = "{{project.youtube_link}}";
 
+      var splitted = youtube_link.split("=");
 
-{% if project.social_user == user.socialaccount_set.all.0  %}
+      var video_id = splitted[1];
 
-<a href="/accounts/profile/edit_project/{{project.id}}" class="btn btn-primary">
-
-Edit
-
-
-</a>
-
-
-<a href="/accounts/profile/delete_project/{{project.id}}" class="btn btn-danger">
-Delete
-</a>
-
-
-{% endif %}
-
-			<div class="">
-
-					<div class='flex-center'>
-
-
-
-
-					{% include "unis/icon.html" with uni=project.university %}
-
-
-
-
-
-
-
-					{% include "students/icon.html" with student=project.social_user %}
-
-
-			</div>
-
-
-			</div>
-
-</div>
-
-
-{% if project.description %}
-<div class="jumbotron">
-
-<h2>
-Description
-</h2>
-
-  <p class="card-text">{{project.description}}</p>
-</div>
-
-
-{% endif %}
-
-
-{% if project.youtube_link %}
-<div class="jumbotron">
-
-<h2>
-Video
-</h2>
-
-
-<div id="video_block">
-
-
-</div>
-
-<script>
-
-var youtube_link='{{project.youtube_link}}'
-
-var splitted = youtube_link.split("=");
-
-var video_id = splitted[1]
-
-var video_el=`
+      var video_el = `
 
 <iframe width="100%" height="500px" src="https://www.youtube.com/embed/${video_id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-`
+`;
 
+      document.getElementById("video_block").innerHTML = video_el;
+    </script>
+  </div>
 
-
-
-document.getElementById("video_block").innerHTML=video_el
-
-</script>
-
-
+  {% endif %}
 </div>
-
-
-{% endif %}
-
-</div>
-
-
-
 
 {% endblock %}
-

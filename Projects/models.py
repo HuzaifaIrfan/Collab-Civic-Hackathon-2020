@@ -49,7 +49,7 @@ class Project(models.Model):
 
     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
 
-    git_link= models.URLField(null=True,blank=True)
+    git_link= models.URLField(null=True,blank=True,verbose_name='Project Files')
 
     youtube_link= models.URLField(null=True,blank=True)
 

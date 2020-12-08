@@ -211,21 +211,21 @@ Under Construction
 
         </ul>
 
+
+        <div>
+
                                <form class="form-inline mt-2 mt-md-0" action="/search" method="get" >
 
 
 
  
-          <input name='q' class="form-control mr-sm-2" type="text" placeholder="Search">
+          <input name='q' class="form-control mr-sm-2 input-sm" type="text" placeholder="Search">
 
-
-          {% comment %} <button style="color: #f7f7f7" class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
- {% endcomment %}
 
 
         </form>
 
-
+</div>
   
 
 
@@ -242,6 +242,14 @@ Under Construction
 
     
 
+
+
+    <a href="/accounts/profile/add_project">
+    
+     <button class="btn btn-primary btn-sm">Add Projects</button>
+
+    
+    </a>
 
 <a href="/accounts/profile">
  <button class="btn btn-primary btn-sm">{{ user.socialaccount_set.all.0.extra_data.name }}</button>
