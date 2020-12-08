@@ -125,7 +125,7 @@ SITE_ID = 1
 
 
 
-from google_outh import client_id, secret
+from google_oauth import client_id, secret
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
