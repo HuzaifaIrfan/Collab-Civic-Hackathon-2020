@@ -26,7 +26,7 @@ def search_projects(request):
         if query is not None:
 
 
-            lookups= Q(full_name__icontains=query) | Q(description__icontains=query)
+            lookups= Q(full_name__icontains=query) | Q(description__icontains=query ) | Q(info__icontains=query )| Q(team__icontains=query )
 
             project_results= Project.objects.filter(lookups).distinct().order_by('-id')
 

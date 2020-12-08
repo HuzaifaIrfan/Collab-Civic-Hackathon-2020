@@ -53,8 +53,14 @@ class Project(models.Model):
 
     youtube_link= models.URLField(null=True,blank=True)
 
+    info=models.TextField(null=True,blank=True)
+
+    team=models.TextField(null=True,blank=True)
+
+    completed=models.BooleanField(default=True)
 
     description=models.TextField(null=True,blank=True)
+    
     image=models.ImageField(upload_to ='static/project/img',default='static/img/default_project.jpg')
 
 

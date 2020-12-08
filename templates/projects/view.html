@@ -54,7 +54,59 @@
     </div>
 
 
+  {% if project.info %}
+
+
+
+
+  <p align='center' style='margin-top:20px;'>
+
+Info: 
+  {{project.info}}
+
+
+  </p>
+
+  {% endif %}
+
+     {% if project.team %}
+
+
+
+
+  <p align='center' style='margin-top:20px;'>
+
+Team: 
+  {{project.team}}
+
+
+  </p>
+
+  {% endif %}
+
+
+      {% if project.completed %}
+
+<h5 align='center'>
+Completed
+</h5>
+
+{% else %}
+
+<h5 align='center'>
+Not Completed
+</h5>
+
+
+  {% endif %}
+
   </div>
+
+
+ 
+
+
+
 
   {% if project.description %}
   <div class="jumbotron">

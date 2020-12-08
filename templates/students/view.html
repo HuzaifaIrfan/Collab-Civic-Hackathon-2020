@@ -8,23 +8,29 @@
       <h2>{{student.extra_data.name}}</h2>
     </div>
 
-    <div class="d-flex flex-row justify-content-center">
+    <div class="d-flex flex-column justify-content-center">
  
 
       {% if user.socialaccount_set.all.0 == student %}
 
+  <div class="d-flex flex-row justify-content-center">
 
+      <a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
 
+</div>
+
+  <div class="d-flex flex-row justify-content-center">
       <a href="/accounts/profile/my_projects" class="btn btn-primary"
         >My Projects</a
       >
-
-      <a href="/accounts/profile/edit" class="btn btn-primary">Edit Profile</a>
 
 
       <a href="/accounts/profile/add_projects" class="btn btn-primary"
         >Add Project</a
       >
+
+</div>
+
 
       {% else %}
 
