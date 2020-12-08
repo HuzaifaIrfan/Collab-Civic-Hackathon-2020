@@ -1,123 +1,80 @@
+{% extends 'Base.html' %} 
+
+{% block content %} 
 
 
-{% extends 'Base.html' %}
+{% include "banner.html" %}
+
+<section class="container jumbotron">
+  <a href="/projects">
+    <h1 align="center">Latest Projects</h1>
+  </a>
 
 
-
-
-
-
-
-{% block content %}
-
-
-
-
-
-
-
-
-
-    <section class="jumbotron landing-display text-center ">
-
-    
-      <div class="container flex-center rgba-black-light" >
-
-<div class='flex-row'>
-        <div class="color-overlay"></div>
-        <h1 style="z-index: 1; color:#f7f7f7;" class="animate__animated animate__fadeInRight jumbotron-heading">COLLAB </h1>
-        <p style="z-index: 1; font-size:30px;" class ="animate__animated animate__fadeInRight special" style=" color: #eceeef;">THE ONLINE PROJECT UNIVERSE.</p>
-        <p>
-          <a href="#" class="animate__animated animate__fadeInRight btn btn-primary">Search Projects</a>
-        </p>
-
-        <div>
-      </div>
-    </section>
-
-
-  <section class="container jumbotron wow animate__animated animate__fadeInRight">
- 
-   
-          <h1 align='center'>
-            Home Page
-          </h1>
-          {% comment %} <p class="lead mb-5 text-white-25">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p> {% endcomment %}
-       
-
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% comment %} 
-
-
-  <!-- Call to Action -->
-  <section class="call-to-action text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started?</h2>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form action='search'>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="text" name='q' class="form-control form-control-lg" placeholder="Search">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" name='submit' value='projects' class="btn btn-block btn-lg btn-primary">Search</button>
-
-              <button type="submit" name='submit' value='users' class="btn btn-block btn-lg btn-primary">Search Users</button> 
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section> {% endcomment %}
-
+</section>
 
 
 <div class="container">
+<div class="row">
 
 
-
+  {% for project in projects %}
+  
+   {% include "projects/card.html" with project=project %} 
+   
+   {% endfor %}
 
 </div>
+</div>
+
+{% comment %}
+
+<!-- Call to Action -->
+<section class="call-to-action text-white text-center">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <h2 class="mb-4">Ready to get started?</h2>
+      </div>
+      <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        <form action="search">
+          <div class="form-row">
+            <div class="col-12 col-md-9 mb-2 mb-md-0">
+              <input
+                type="text"
+                name="q"
+                class="form-control form-control-lg"
+                placeholder="Search"
+              />
+            </div>
+            <div class="col-12 col-md-3">
+              <button
+                type="submit"
+                name="submit"
+                value="projects"
+                class="btn btn-block btn-lg btn-primary"
+              >
+                Search
+              </button>
+
+              <button
+                type="submit"
+                name="submit"
+                value="users"
+                class="btn btn-block btn-lg btn-primary"
+              >
+                Search Users
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endcomment %}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% endblock  %}
+{% endblock %}

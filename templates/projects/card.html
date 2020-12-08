@@ -7,8 +7,124 @@
 
 
 
+<div class="card mb-3" style="min-width: 100%;">
+      <div class="row no-gutters">
+                    <div class="col-md-4">
+                                        <div class="view view-cascade overlay image-card ">
 
 
+
+                                      <img src='/{{project.image}}' class="" height="200px" width="200px" />
+
+
+                                      <a href="/projects/{{project.id}}">
+                                            <div class="mask rgba-black-strong flex-center">
+
+                                                  <p class="white-text">View
+
+                                                  </p>
+                                              </div>
+                                          </a>
+                                        </div>
+
+                    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+              <h5 class="card-title">{{project.full_name}}</h5>
+
+
+                              <div class='d-flex flex-row'>
+
+
+                              {% include "students/icon.html" with student=project.social_user %}
+                              {% if project.university %}
+                                            {% include "unis/icon.html" with uni=project.university %}
+
+                                            {% endif %}
+
+                              </div>
+
+      
+
+
+                    <p class="card-text">
+                    
+              
+                  <p>{{project.description}}</p>
+
+                    
+                    
+                    </p>
+                    
+        
+        
+                                    
+                                    
+
+
+                            {% if project.social_user == user.socialaccount_set.all.0  %}
+
+
+
+                            <a href="/accounts/profile/edit_project/{{project.id}}">
+
+                                    <button class="btn btn-info  ">
+
+                                      Edit
+
+                                    </button>
+
+                            </a>
+
+
+
+                            <a href="/accounts/profile/delete_project/{{project.id}}">
+
+                                    <button class="btn btn-danger ">
+
+                                      Delete
+                                      
+                                    </button>
+
+                            </a>
+
+
+
+                            {% endif %}
+
+        
+        
+        
+        
+        
+    
+
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} 
 <!-- Card Wider -->
 <div class="card card-cascade wider col-lg-4 col-md-6 mb-4">
 
@@ -33,7 +149,7 @@
     
     <h5 class="blue-text pb-2"><strong>{{project.assigned_project.full_name}}</strong></h5>
     <!-- Text -->
-    {% comment %} <p class="card-text">{{project.description}}</p> {% endcomment %}
+  <p class="card-text">{{project.description}}</p> 
 
 
   
@@ -44,12 +160,6 @@
 
 
 
-    {% comment %} <!-- Linkedin -->
-    <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
-    <!-- Twitter -->
-    <a class="px-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a>
-    <!-- Dribbble -->
-    <a class="px-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a> {% endcomment %}
 
       </div>
 
@@ -60,25 +170,15 @@
   <div class="card-footer text-muted text-center">
 
 
-  	<div class="flex-center">
 
 
-    
+
+    <div class="d-flex flex-row justify-content-between">
    
 {% include "students/icon.html" with student=project.social_user %}
 
 
 
-{% if project.university %}
-              {% include "unis/icon.html" with uni=project.university %}
-
-              {% endif %}
-
-      
-
-
-
-<div class="flex-right">
 
 {% if project.social_user == user.socialaccount_set.all.0  %}
 
@@ -110,12 +210,28 @@
 {% endif %}
 
 
+
+
+
+
+{% if project.university %}
+              {% include "unis/icon.html" with uni=project.university %}
+
+              {% endif %}
+
+      
+
+
+
+
+
+
+
   </div>
 
 
 
- 
-          </div>
+
 
 
 
@@ -129,7 +245,7 @@
 
 
 </div>
-<!-- Card Wider -->
+<!-- Card Wider --> {% endcomment %}
 
 
 
