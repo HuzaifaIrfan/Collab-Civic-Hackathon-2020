@@ -4,9 +4,8 @@
 
 {% block content %}
 
-<h1>Search Page</h1>
 
-<br/>
+
 {% comment %} <form action="{% url 'search:search_projects' %}" method="GET" value="{{request.GET.q}}">
 Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search posts"/>
 <input type="submit" name="submit" value="Search"/>
@@ -16,8 +15,30 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search
 {% comment %} {% if submitbutton == 'Search' and request.GET.q != '' %}
 
 {% endif %} {% endcomment %}
+
+
+
+<div class='container jumbotron'>
+
+        <div class='d-flex justify-content-center '>
+
+                               <form class="form-inline" action="/search" method="get" >
+
+          <input name='q' class="form-control form-control-lg" type="text" placeholder="Search">
+ <input type='submit' class="btn btn-primary" value='Search Projects' />
+        </form>
+
+</div>
+  
+
+</div>
+
+
+
+
 {% if projects %}
-<h1>Results for <b>{{ request.GET.q }}</b></h1>
+
+
 <br/><br/>
 
 <div class='container'>
@@ -40,7 +61,6 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search
 {% else %}
 
 
-No search results for this query
 
 
 {% endif %}

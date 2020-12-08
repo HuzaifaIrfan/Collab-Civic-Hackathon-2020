@@ -189,6 +189,11 @@ Under Construction
 
 
 
+                 <li class="nav-item ">
+
+    <a class="nav-link" href="/projects">Projects</a>
+</li>
+
 
 
 
@@ -243,41 +248,43 @@ Under Construction
     
 
 
+<form action='/accounts/profile/add_project'>
 
-    <a href="/accounts/profile/add_project">
-    
+
      <button class="btn btn-primary btn-sm">Add Projects</button>
 
     
-    </a>
+  
+ </form> 
 
-<a href="/accounts/profile">
+<form action='/accounts/profile'>
+
  <button class="btn btn-primary btn-sm">{{ user.socialaccount_set.all.0.extra_data.name }}</button>
 
-</a>
 
+ </form> 
 
 
        
 
-{% comment %} <form method="post" action="/accounts/logout/">
- {% csrf_token %} {% endcomment %}
+ <form method="post" action="/accounts/logout/">
+ {% csrf_token %} 
 
 <a href="/accounts/logout/">
   <button class="btn btn-primary btn-sm" type="submit">Sign Out</button>
 
   </a>
 
-{% comment %} </form> {% endcomment %}
+ </form> 
 
 
 
 
 {% else %}
-
+ <form action='/accounts/google/login/'>
      
-            <a class="btn btn-primary  btn-sm" href={% provider_login_url 'google' %}>Sign In with Google <i class="fab fa-google fa-fw"></i></a>
-    
+            <button class="btn btn-primary btn-sm" >Sign In with Google <i class="fab fa-google fa-fw"></i></button>
+    </form> 
 {% endif %}
 
 

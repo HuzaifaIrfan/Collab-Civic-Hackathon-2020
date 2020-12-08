@@ -50,12 +50,26 @@
         
                                     
                              <div class='d-flex flex-row'>
+        
+
+        
+        
+                       {% include "students/icon.html" with student=project.social_user %}
+                              {% if project.university %}
+                                            {% include "unis/icon.html" with uni=project.university %}
+
+                                            {% endif %}
+
+                              </div>
+
+
+                               
           
 
 
                             {% if project.social_user == user.socialaccount_set.all.0  %}
 
-
+  <div class='d-flex flex-row-reverse'>
 
                             <a href="/accounts/profile/edit_project/{{project.id}}">
 
@@ -82,18 +96,9 @@
 
                
 
-
+ </div>
                             {% endif %}
-
-        
-        
-                       {% include "students/icon.html" with student=project.social_user %}
-                              {% if project.university %}
-                                            {% include "unis/icon.html" with uni=project.university %}
-
-                                            {% endif %}
-
-                              </div>
+                           
         
         
     

@@ -48,6 +48,9 @@ def search_projects(request):
 
             context={'projects': projects,
                      'submitbutton': submitbutton}
+
+
+            context['page_title']=f"Showing Search Results for ({query})"
             print(context)
 
             return render(request, 'search/search.html', context)
