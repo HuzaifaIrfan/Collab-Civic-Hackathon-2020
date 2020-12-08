@@ -49,6 +49,7 @@
 
 
 
+
 {% if project.social_user == user.socialaccount_set.all.0  %}
 
 <a href="/accounts/profile/edit_project/{{project.id}}" class="btn btn-primary">
@@ -66,11 +67,14 @@ Delete
 
 {% endif %}
 
+			<div class="">
+
+					<div class='flex-center'>
 
 
 
 
-{% include "unis/icon.html" with uni=project.university %}
+					{% include "unis/icon.html" with uni=project.university %}
 
 
 
@@ -78,9 +82,13 @@ Delete
 
 
 
-{% include "students/icon.html" with student=project.social_user %}
+					{% include "students/icon.html" with student=project.social_user %}
 
 
+			</div>
+
+
+			</div>
 
 </div>
 

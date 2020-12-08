@@ -16,7 +16,10 @@
   <div class="view view-cascade overlay">
      <img src='/{{project.image}}'class="card-img-top"  />
     <a href="/projects/{{project.id}}">
-      <div class="mask rgba-black-light"></div>
+
+      <div class="mask rgba-black-strong flex-center">   <p class="white-text">View
+
+            </p></div>
     </a>
   </div>
 
@@ -37,27 +40,9 @@
 
 
 
-{% comment %} 
-
-    <a href="/projects/{{project.id}}" class="btn btn-default">View Project</a>
-
-{% if project.social_user == user.socialaccount_set.all.0  %}
-
-<a href="/accounts/profile/edit_project/{{project.id}}" class="btn btn-primary">
-
-Edit
 
 
-</a>
 
-
-<a href="/accounts/profile/delete_project/{{project.id}}" class="btn btn-danger">
-Delete
-</a>
-
-
-{% endif %}
- {% endcomment %}
 
     {% comment %} <!-- Linkedin -->
     <a class="px-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a>
@@ -69,8 +54,16 @@ Delete
       </div>
 
 
+
+
   <!-- Card footer -->
   <div class="card-footer text-muted text-center">
+
+
+  	<div class="flex-center">
+
+
+    
    
 {% include "students/icon.html" with student=project.social_user %}
 
@@ -80,6 +73,52 @@ Delete
               {% include "unis/icon.html" with uni=project.university %}
 
               {% endif %}
+
+      
+
+
+
+<div class="flex-right">
+
+{% if project.social_user == user.socialaccount_set.all.0  %}
+
+
+
+<a href="/accounts/profile/edit_project/{{project.id}}">
+
+        <button class="btn btn-info btn-circle m-1  ">
+
+          <i class="fa fa-edit"></i>
+
+        </button>
+
+</a>
+
+
+
+<a href="/accounts/profile/delete_project/{{project.id}}">
+
+        <button class="btn btn-danger btn-circle m-1 ">
+
+          <i class="fa fa-trash"></i>
+          
+        </button>
+
+</a>
+
+
+{% endif %}
+
+
+  </div>
+
+
+
+ 
+          </div>
+
+
+
   </div>
 
 
@@ -91,6 +130,20 @@ Delete
 
 </div>
 <!-- Card Wider -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

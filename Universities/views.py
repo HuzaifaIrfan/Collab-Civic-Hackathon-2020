@@ -31,6 +31,8 @@ def all_unis(request):
 
     context['unis']=unis
 
+    context['page_title']='All Universities'
+
 
     return(render(request,'unis/list_view.html',context))
 

@@ -1,14 +1,19 @@
 
 
 <!-- Card Wider -->
-<div class="card card-cascade wider col-lg-4 col-md-8 mb-8">
+<div class="card card-cascade wider col-xl-2 col-md-8 mb-8">
 
   <!-- Card image -->
   <div class="view view-cascade overlay">
   <img src='{{student.get_avatar_url}}' class="card-img-top rounded-circle"  />
 
     <a href="/students/{{student.id}}">
-      <div class="mask rgba-white-slight"></div>
+      <div class="mask rounded-circle rgba-black-strong flex-center">
+
+            <p class="white-text">View
+
+            </p>
+        </div>
     </a>
   </div>
 
@@ -20,13 +25,15 @@
     <!-- Subtitle -->
 
     
-    <h5 class="blue-text pb-2"><strong>{{student.university.full_name}}</strong></h5>
+    <h5 class="blue-text pb-2"><strong>{{student.university.name}}</strong></h5>
+
+
     {% comment %} <!-- Text -->
     <p class="card-text">{{student.bio}} </p>
  {% endcomment %}
 
 
-    <a href="/projects/bystudent/{{student.id}}" class="btn btn-primary">View Projects</a>
+    <a href="/projects/bystudent/{{student.id}}" class="btn btn-primary">Projects</a>
 
 
 
@@ -39,20 +46,48 @@
 
       </div>
 
-{% if student.university %}
+
   <!-- Card footer -->
   <div class="card-footer text-muted text-center">
 
 
+        <div class="flex-center">
+
+          {% if student.university %}
+
+
               {% include "unis/icon.html" with uni=student.university %}
+
+                {% endif %}
+
+
+                </div>
 
             
   </div>
 
-  {% endif %}
+
 
 </div>
 <!-- Card Wider -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 {% comment %} 

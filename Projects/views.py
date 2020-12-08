@@ -7,6 +7,8 @@ from Universities.models import Universities,Departments,Batches
 
 from .models import Project
 
+from allauth.socialaccount.models import SocialAccount
+
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -45,8 +47,8 @@ def student_projects_view(request,student_id):
 
     context={}
 
-
-    all_projects=Project.objects.filter(social_user=student_id).order_by("-id")
+    social_user=SocialAccount.objects.get(id=student_id)
+    all_projects=Project.objects.filter(social_user=social_user).order_by("-id")
 
 
     try:
@@ -62,7 +64,7 @@ def student_projects_view(request,student_id):
 
     context['projects']=projects
 
-    context['page_title']='Student Projects View'
+    context['page_title']=f"Projects by {social_user.extra_data['name']}"
 
     return(render(request,'projects/list_view.html',context))
 
@@ -73,8 +75,9 @@ def uni_projects_view(request,uni_id):
 
     context={}
 
-
-    all_projects=Project.objects.filter(university=uni_id).order_by("-id")
+    university=Universities.objects.get(id=uni_id)
+    all_projects=Project.objects.filter(university=university).order_by("-id")
+    
 
 
     try:
@@ -88,7 +91,7 @@ def uni_projects_view(request,uni_id):
 
     projects = new_paginator.page(page)
 
-    context['page_title']='Uni Projects View'
+    context['page_title']=f'Projects from {university.name}'
 
     context['projects']=projects
 

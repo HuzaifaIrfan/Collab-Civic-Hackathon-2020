@@ -32,7 +32,8 @@ def all_students(request):
     students = new_paginator.page(page)
 
     context['students']=students
-
+    
+    context['page_title']='All Students'
 
     return(render(request,'students/list_view.html',context))
 
@@ -45,8 +46,8 @@ def uni_students_view(request, uni_id):
 
     context={}
 
-
-    all_students=SocialAccount.objects.filter(university=uni_id).order_by("-id")
+    university=Universities.objects.get(id=uni_id)
+    all_students=SocialAccount.objects.filter(university=university).order_by("-id")
 
 
     try:
@@ -61,6 +62,8 @@ def uni_students_view(request, uni_id):
     students = new_paginator.page(page)
 
     context['students']=students
+
+    context['page_title']=f"Students from {university.name}"
 
 
     return(render(request,'students/list_view.html',context))
