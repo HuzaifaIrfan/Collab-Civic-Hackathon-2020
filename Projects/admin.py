@@ -9,7 +9,11 @@ class Project_Admin(admin.ModelAdmin):
     list_display = (
         "full_name",
         "social_user",
+        'completed',
+        'project_files',
+
     )
+    list_filter = ("assigned_project",)
 
 
 @admin.register(Assigned_Project)
