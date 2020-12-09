@@ -128,14 +128,15 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-static/img/unis/*
-!static/img/unis/.gitkeep 
+
 
 static/project/img/*
 !static/project/img/.gitkeep 
 
 static/project/report/*
 !static/project/report/.gitkeep 
+
+
 
 
 google_oauth.py
