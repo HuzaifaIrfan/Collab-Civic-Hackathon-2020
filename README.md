@@ -1,4 +1,4 @@
-# Collab-Civic-Hackathon-2020
+# Collab Civic Hackathon 2020
  
 
 
@@ -29,11 +29,25 @@ https://www.youtube.com/watch?v=G4ju8QMvOlc
 
 
 
+## Technologies Used
+- Django
+- Bootstrap 4 (Material Design)
+
 
 ## Instructions
 
 #### Install Python and Libraries and Dependencies (add to path for easy access)
 > pip install -r req.txt 
+
+or
+
+> pip install django
+
+> pip install django-allauth
+
+> pip install django-crispy-forms
+
+> pip install Pillow
 
 #### Edit google_oauth.py with Oauth ID and Key
 
