@@ -182,7 +182,7 @@ def add_project(request):
 
                 form.save()
 
-                context['message']={'success':True,'message':f"Project Added {form_data['full_name']} "}
+                context['message']={'success':True,'message':f"Project Added {form_data['full_name']} ",'project'}
 
             except:
 
