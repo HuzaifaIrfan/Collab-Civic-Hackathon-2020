@@ -20,15 +20,20 @@ Search <input type="text" name="q" value="{{request.GET.q}}" placeholder="Search
 
 <div class='container jumbotron'>
 
-        <div class='d-flex justify-content-center '>
+                            <div class='d-flex justify-content-center align-items-center container' style="margin-top:0px; width:100%; min-height: 100px; max-height: 200px;">
 
-                               <form class="form-inline" action="/search" method="get" >
+                                                <form class="form-inline d-flex justify-content-center align-items-center" action="/search" method="get" >
 
-          <input name='q' class="form-control form-control-lg" type="text" placeholder="Search">
- <input type='submit' class="btn btn-primary" value='Search Projects' />
-        </form>
+                                                <input name='q' class="form-control form-control-lg" type="text" placeholder="Search">
 
-</div>
+                                      
+
+
+                                        <input style='width:100%' type='submit' class="btn btn-primary btn-lg" value='Search Projects' />
+
+                                </form>
+
+             </div>
   
 
 </div>
