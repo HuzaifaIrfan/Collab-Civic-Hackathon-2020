@@ -11,6 +11,7 @@ class Project_Admin(admin.ModelAdmin):
         "social_user",
         'completed',
         'project_files',
+        'report',
 
     )
     list_filter = ("assigned_project",)
