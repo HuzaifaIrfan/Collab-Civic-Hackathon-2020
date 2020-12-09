@@ -54,6 +54,24 @@
                     
         
         {% endif %}
+
+
+              {% if project.completed %}
+
+<h5 >
+Status : Completed
+</h5>
+
+{% else %}
+
+<h5 >
+Status : In Progress
+</h5>
+
+
+  {% endif %}
+
+
                                     
                              <div class='d-flex flex-row'>
         
