@@ -59,7 +59,7 @@
 
 
 
-  <p align='center' style='margin-top:20px;'>
+  <p class='jumbotron' style='margin-top:20px;'>
 
 Info: 
   {{project.info}}
@@ -74,7 +74,7 @@ Info:
 
 
 
-  <p align='center' style='margin-top:20px;'>
+  <p class='jumbotron' style='margin-top:20px;'>
 
 Team: 
   {{project.team}}
@@ -88,13 +88,13 @@ Team:
       {% if project.completed %}
 
 <h5 align='center'>
-Completed
+Status : Completed
 </h5>
 
 {% else %}
 
 <h5 align='center'>
-Not Completed
+Status : In Progress
 </h5>
 
 
@@ -121,6 +121,8 @@ Not Completed
   </div>
 
   {% endif %}
+
+
      {% if project.report %}
 
        <div class="jumbotron">
