@@ -50,3 +50,7 @@ https://www.youtube.com/watch?v=G4ju8QMvOlc
 ## Team Collab
 
 
+![group1](/static/team/group1.png)
+
+![group2](/static/team/group2.png)
+
