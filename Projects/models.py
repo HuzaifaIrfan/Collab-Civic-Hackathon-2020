@@ -42,7 +42,7 @@ class Assigned_Project(models.Model):
 
 
 class Project(models.Model):
-    full_name = models.CharField(max_length=100,)
+    full_name = models.CharField(max_length=100,verbose_name='Project Name')
 
 
     social_user = models.ForeignKey(SocialAccount, on_delete=models.CASCADE)

@@ -24,9 +24,11 @@ It started when we were working on one of our projects. It took lots of time to 
 This made us realize about how this void in communication and collaboration results in a lot of projects with very high potential, getting dumped or go unrecognized because they get isolated and no one further works upon them, instead everyone starts their projects from scratch again…
 
 
-## Collab Video
+## Collab - Idea Proposal Video
 https://www.youtube.com/watch?v=G4ju8QMvOlc
 
+## Collab - Demo Video
+https://www.youtube.com/watch?v=G4ju8QMvOlc
 
 
 ## Technologies Used
