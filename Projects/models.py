@@ -49,7 +49,7 @@ class Project(models.Model):
 
     university= models.ForeignKey(Universities, on_delete=models.SET_NULL, null=True,blank=True)
 
-    git_link= models.URLField(null=True,blank=True,verbose_name='Project Files Link')
+    git_link= models.URLField(null=True,blank=True,verbose_name='External Project Files Link')
 
     youtube_link= models.URLField(null=True,blank=True)
 
@@ -65,6 +65,8 @@ class Project(models.Model):
 
 
     report= models.FileField(upload_to ='static/project/report', null=True,blank=True)
+
+    project_files= models.FileField(upload_to ='static/project/files', null=True,blank=True,verbose_name='Project Zip File')
 
 
     assigned_project = models.ForeignKey(Assigned_Project, on_delete=models.SET_NULL ,null=True, blank=True)

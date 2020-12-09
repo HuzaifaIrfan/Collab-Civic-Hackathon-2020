@@ -18,6 +18,15 @@
       <div style='margin:20px;' class="d-flex flex-row justify-content-center">
 
 
+              {% if project.project_files %}
+
+        <a target='_blank' href="/{{project.project_files}}" class="btn btn-primary">
+          Project Zip File
+        </a>
+
+        {% endif %} 
+
+
 
         {% if project.git_link %}
 
@@ -26,8 +35,10 @@
         </a>
 
         {% endif %} 
+
+        </div>
         
-        
+        <div style='margin:20px;' class="d-flex flex-row justify-content-center">
         {% if project.social_user == user.socialaccount_set.all.0 %}
 
         <a
