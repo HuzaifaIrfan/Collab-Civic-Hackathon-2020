@@ -1,5 +1,9 @@
 # Collab-Civic-Hackathon-2020
  
+
+
+![logo](/static/imgs/logo8.png)
+
 ## Description
 
 
@@ -17,8 +21,6 @@ This made us realize about how this void in communication and collaboration resu
 ## Collab Video
 https://www.youtube.com/watch?v=G4ju8QMvOlc
 
-## Multi Form Screen Shot
-![ss](/ss.png)
 
 
 
