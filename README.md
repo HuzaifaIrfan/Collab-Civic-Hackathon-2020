@@ -52,12 +52,12 @@ or
 #### Edit google_oauth.py with Oauth ID and Key
 
 
-#### Seting up SQLite Database
+#### Setting up SQLite Database
 
 > python manage.py migrate
 
 
-### Run Development Server
+### Running Development Server
 > python manage.py runserver 0.0.0.0:80
 
 
