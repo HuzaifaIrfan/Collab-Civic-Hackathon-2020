@@ -28,7 +28,10 @@ This made us realize about how this void in communication and collaboration resu
 https://www.youtube.com/watch?v=G4ju8QMvOlc
 
 ## Collab - Demo Video
-https://www.youtube.com/watch?v=G4ju8QMvOlc
+https://www.youtube.com/watch?v=9P9XuZxuBkI
+
+## Hackathon Link
+https://devpost.com/software/collab-civic-hackathon-2020
 
 
 ## Technologies Used
